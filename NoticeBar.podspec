@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   # s.social_media_url   = "https://twitter.com/qiuncheng"
 
   s.platform     = :ios, "8.0"
-  s.source       = { :git => "https://github.com/qiuncheng/NoticeBar.git", :tag => "#{s.version}" }
-  s.source_files  = "NoticeBar/**/*.{h, swift}"
+  s.source       = { :git => "https://github.com/qiuncheng/NoticeBar.git", :tag => s.version }
+  s.source_files  = "NoticeBar/**/*.{swift,h}"
   s.resource_bundles = {'NoticeBar' => ['NoticeBar/Images.xcassets/**/*']}
   
   s.framework  = "UIKit"
