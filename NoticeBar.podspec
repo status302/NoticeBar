@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/qiuncheng/NoticeBar.git", :tag => s.version }
-  s.source_files  = "NoticeBar/**/*.{swift,h}"
+  s.source_files  = 'NoticeBar/*.{swift,h}'
   s.resource_bundles = {'NoticeBar' => ['NoticeBar/Images.xcassets/**/*']}
   
   s.framework  = "UIKit"
