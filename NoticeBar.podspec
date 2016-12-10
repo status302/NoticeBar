@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "Qiuncheng" => "qiuncheng@gmail.com" }
-  s.social_media_url   = "http://twitter.com/qiuncheng"
+  s.social_media_url   = "https://twitter.com/qiuncheng"
 
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/qiuncheng/NoticeBar.git", :tag => "#{s.version}" }
