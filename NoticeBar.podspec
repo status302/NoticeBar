@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NoticeBar"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "😍A simple NoticeBar with QQ notice view style.😀"
   s.description  = <<-DESC
                   😍A simple NoticeBar with QQ notice view style.😀 You can use the default style or custom style.
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/qiuncheng/NoticeBar.git", :tag => s.version }
   s.source_files  = 'NoticeBar/*.{swift,h}'
-  s.resource_bundles = {'NoticeBar' => ['NoticeBar/Images.xcassets/*']}
+  s.resource_bundles = {'NoticeBar' => ['NoticeBar/*.xcassets']}
   
   s.framework  = "UIKit"
   s.requires_arc = true
