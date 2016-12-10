@@ -1,0 +1,6 @@
+framework module NoticeBar {
+  umbrella header "NoticeBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

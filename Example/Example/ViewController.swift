@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NoticeBar
 
 class ViewController: UIViewController {
 
@@ -19,6 +20,13 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func showNoticeBar(_ sender: Any) {
+
+        let noticeBar = NoticeBar(title: "haha", defaultType: .error)
+        noticeBar.show(duration: 1.8, completed: {
+            (finished: Bool) in
+        })
     }
 
 
