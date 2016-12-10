@@ -1,0 +1,7 @@
+platform :ios, '9.0'
+
+target 'Example' do
+  use_frameworks!
+
+  pod 'NoticeBar', :git => 'https://github.com/qiuncheng/NoticeBar.git', :tag => '0.1.0'
+end
