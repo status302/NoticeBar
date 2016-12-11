@@ -3,7 +3,7 @@ NoticeBar
 😍A simple NoticeBar written by Swift 3, similar with QQ notice view.😀  
 [![](https://img.shields.io/badge/Swift-3.0-yellowgreen.svg)](https://github.com/qiuncheng/NoticeBar)
 [![](https://img.shields.io/badge/support-iOS8-lightgrey.svg)](https://github.com/qiuncheng/NoticeBar)
-[![pod version](https://img.shields.io/badge/Pod-v0.1.2-brightgreen.svg)](https://cocoapods.org/pods/NoticeBar)
+[![pod version](https://img.shields.io/badge/Pod-v0.1.4-brightgreen.svg)](https://cocoapods.org/pods/NoticeBar)
 [![](https://img.shields.io/badge/platform-iOS-yellow.svg)](https://github.com/qiuncheng/NoticeBar)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/qiuncheng/NoticeBar/master/LICENSE)
 [![](https://img.shields.io/vso/build/larsbrinkhoff/953a34b9-5966-4923-a48a-c41874cfb5f5/1.svg)]()
@@ -18,7 +18,7 @@ NoticeBar
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_navigationbar.jpg?raw=true" width="20%" height="20%">
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_tabbar.jpg?raw=true" width="20%" height="20%">
 
-** Remember: If you want the status bar style change, you must set the `View controller-based status bar appearance` to `NO` in the `info.plist`. **
+**Remember: If you want the status bar style change, you must set the `View controller-based status bar appearance` to `NO` in the `info.plist`.**
 Support
 ===
 Swift 3.0 & iOS 8+
@@ -31,9 +31,9 @@ Installation
 3. `import Noticebar`
 
 #### Carthage
-1. Add Noticebar to your Cartfile. e.g., `github "qiuncheng/Noticebar" ~> 0.1.3`
+1. Add Noticebar to your Cartfile. e.g., `github "qiuncheng/Noticebar" ~> 0.1.4`
 2. Run `carthage update`
-3. Follow the [rest of the standard Carthage installation](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) instructions to add Noticebar to your project.
+3. Follow the rest of the [standard Carthage installation](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) instructions to add Noticebar to your project.
 4. `import NoticeBar`
 
 #### Manually
@@ -90,10 +90,10 @@ Copyright (c) 2016 [QiunCheng](http://qiuncheng.com). All rights reserved.
 Thanks
 ===
 1. [QQ's Notice View](https://itunes.apple.com/cn/app/qq/id444934666?mt=8) which the idea come from.  
-- <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/qq_notice_view_2.jpg?raw=true" width="50%" height="50%">
-- <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/qq_notice_view_1.jpg?raw=true" width="50%" height="50%">
-2. [Pin's Notice View](https://itunes.apple.com/us/app/pin-jian-tie-ban-kuo-zhan/id1039643846?mt=8) which I take example by.  
-- <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/pin_notice_view.jpg?raw=true" width="50%" height="50%">
+<img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/qq_notice_view_2.jpg?raw=true" width="50%" height="50%">  
+<img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/qq_notice_view_1.jpg?raw=true" width="50%" height="50%">
+2. [Pin's Notice View](https://itunes.apple.com/us/app/pin-jian-tie-ban-kuo-zhan/id1039643846?mt=8) which I take example by.   
+<img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/pin_notice_view.jpg?raw=true" width="50%" height="50%">
 
 About me
 ===
