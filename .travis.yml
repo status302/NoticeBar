@@ -1,11 +1,11 @@
 language: objective-c
 osx_image: xcode8.1
-xcode_sdk: iphonesimulator10.1
-# before_install:
-#     - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
-#     - pod install
+podfile: Example/Podfile
+before_install:
+    - gem install cocoapods
+    - pod install --project-directory=Example
 before_script:
-  - export LANG=en_US.UTF-8
-# xcode_workspace: Example/Example.xcworkspace
-xcode_project: NoticeBar.xcodeproj
-xcode_scheme: NoticeBar
+    - export LANG=en_US.UTF-8
+script: 
+    - set -0 pipefail && xcodebuild test -workspace Example/Example.xcworkspace -scheme Example iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+    - pod lib lint
