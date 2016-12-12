@@ -1,12 +1,12 @@
 NoticeBar
 ===
 😍A simple NoticeBar written by Swift 3, similar with QQ notice view.😀  
+[![Build Status](https://travis-ci.org/qiuncheng/NoticeBar.svg?branch=master)](https://travis-ci.org/qiuncheng/NoticeBar)
 [![](https://img.shields.io/badge/Swift-3.0-yellowgreen.svg)](https://github.com/qiuncheng/NoticeBar)
 [![](https://img.shields.io/badge/support-iOS8-lightgrey.svg)](https://github.com/qiuncheng/NoticeBar)
 [![pod version](https://img.shields.io/badge/Pod-v0.1.4-brightgreen.svg)](https://cocoapods.org/pods/NoticeBar)
 [![](https://img.shields.io/badge/platform-iOS-yellow.svg)](https://github.com/qiuncheng/NoticeBar)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/qiuncheng/NoticeBar/master/LICENSE)
-[![](https://img.shields.io/vso/build/larsbrinkhoff/953a34b9-5966-4923-a48a-c41874cfb5f5/1.svg)]()
 
 #### ScreenShots
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_error.jpg?raw=true" width="20%" height="20%">
@@ -48,19 +48,19 @@ Example
 + NoticeBarAnimationType.success
 + NoticeBarAnimationType.error
 
-**How to use?** For example -> `NoticeBarAnimationType.info`:
+How to use? For example: -> `NoticeBarAnimationType.info`:
 ```Swift
 /// title : The message you want to show
-/// defaultType : The four types with different style above.
+/// defaultType : Above four types with different style above.
 let noticeBar = NoticeBar(title: "#message", defaultType:.info)
 /// duration : How long the noticeBar will stay. And it will dismiss automatically. 
-/// completed : when the noticeBar dismissed, what you want to do.
+/// completed :optional. When the noticeBar dismissed, what you want to do, nothing type nil.
 noticeBar.show(duration: #TimeInterval, completed: { (#Bool) in
 })
 ```
 #### Custom `NoticeBarConfig`
 The NoticeBarConfig will manage the NoticeBar's `title` default is `nil`, `image` if needed, `textColor` default is `UIColor.black`, `backgroundColor` default is `UIColor.white`, `animationType` default is from `NoticeBarAnimationType.top`, `barStyle` default is `NoticeBarStyle.onNavigationBar`, `margin` default is `10.0` which will determine the space between `image` and `title`, the space between `NoticeBar left` and `image`.  
-**How to use?** For example
+How to use? For example:
 ```
 /// NoticeBarConfig : There are some other NoticeBarConfig init, it's up to you which to use.
 let config = NoticeBarConfig(title: "#message you want to show.", image: #image, textColor: UIColor.white, backgroundColor: UIColor.red, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
@@ -80,12 +80,7 @@ TODO
 - [ ] Add background image
 - [ ] Add custom view
 - [ ] Add custom super view, now is keyWindows.
-
-LICENCE
-===
-Under [MIT License](https://github.com/qiuncheng/NoticeBar/blob/master/LICENSE)
-
-Copyright (c) 2016 [QiunCheng](http://qiuncheng.com). All rights reserved.
+- [ ] Add dismiss action manually, now dimiss is automatically.
 
 Thanks
 ===
@@ -95,8 +90,12 @@ Thanks
 2. [Pin's Notice View](https://itunes.apple.com/us/app/pin-jian-tie-ban-kuo-zhan/id1039643846?mt=8) which I take example by.   
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/pin_notice_view.jpg?raw=true" width="50%" height="50%">
 
+LICENCE
+===
+Under [MIT License](https://github.com/qiuncheng/NoticeBar/blob/master/LICENSE)
+
+Copyright (c) 2016 [QiunCheng](http://qiuncheng.com). All rights reserved.
 About me
 ===
 A student in Xidian university. [MY RESUME](http://qiuncheng.com/resume.html).   
-Looking for a iOS job now, glad to every oppotunity.  If you can offer me, [contact me anytime!](mailto:qiuncheng@gmail.com)  
 If you have a new idea about this project, [contact me anytime!](mailto:qiuncheng@gmail.com) OR pull request.
