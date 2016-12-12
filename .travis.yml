@@ -1,0 +1,5 @@
+nguage: objective-c
+osx_image: xcode8.1
+xcode_project: NoticeBar.xcodeproj
+xcode_scheme: NoticeBar
+xcode_sdk: iphonesimulator10.1
