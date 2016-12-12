@@ -3,7 +3,7 @@ osx_image: xcode8.1
 podfile: Example/Podfile
 before_install:
     - rvm use system
-    - sudo bundle update rake
+    # - sudo bundle update rake
     - sudo gem install cocoapods
     - pod install --project-directory=Example
     
