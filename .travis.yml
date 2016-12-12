@@ -1,5 +1,6 @@
 language: objective-c
 osx_image: xcode8.1
+xcode_sdk: iphonesimulator10.1
 # before_install:
 #     - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
 #     - pod install
