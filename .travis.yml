@@ -3,9 +3,10 @@ osx_image: xcode8.1
 podfile: Example/Podfile
 before_install:
     - rvm use system
-    - gem install cocoapods
-    - pod install --project-directory=Example
     - sudo bundle update rake
+    - sudo gem install cocoapods
+    - pod install --project-directory=Example
+    
 script: 
     - set -0 pipefail && xcodebuild test -workspace Example/Example.xcworkspace -scheme Example iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
     - pod lib lint
