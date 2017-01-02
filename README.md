@@ -94,8 +94,8 @@ LICENCE
 ===
 Under [MIT License](https://github.com/qiuncheng/NoticeBar/blob/master/LICENSE)
 
-Copyright (c) 2016 [QiunCheng](http://qiuncheng.com). All rights reserved.
+Copyright (c) 2016 QiunCheng. All rights reserved.
 About me
 ===
-A student in Xidian university. [MY RESUME](http://qiuncheng.com/resume.html).   
-If you have a new idea about this project, [contact me anytime!](mailto:qiuncheng@gmail.com) OR pull request.
+A student in Xidian University. [MY RESUME](https://qiuncheng.github.io/resume.html).   
+If you have a new idea about this project, [Please let me know.](mailto:qiuncheng@gmail.com) OR pull request.
