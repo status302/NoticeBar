@@ -4,7 +4,7 @@ NoticeBar
 [![Build Status](https://travis-ci.org/qiuncheng/NoticeBar.svg?branch=master)](https://travis-ci.org/qiuncheng/NoticeBar)
 [![](https://img.shields.io/badge/Swift-3.0-yellowgreen.svg)](https://github.com/qiuncheng/NoticeBar)
 [![](https://img.shields.io/badge/support-iOS8-lightgrey.svg)](https://github.com/qiuncheng/NoticeBar)
-[![pod version](https://img.shields.io/badge/Pod-v0.1.4-brightgreen.svg)](https://cocoapods.org/pods/NoticeBar)
+[![pod version](https://img.shields.io/badge/Pod-v0.1.5-brightgreen.svg)](https://cocoapods.org/pods/NoticeBar)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![](https://img.shields.io/badge/platform-iOS-yellow.svg)](https://github.com/qiuncheng/NoticeBar)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/qiuncheng/NoticeBar/master/LICENSE)
@@ -32,7 +32,7 @@ Installation
 3. `import Noticebar`
 
 #### Carthage
-1. Add Noticebar to your Cartfile. e.g., `github "qiuncheng/Noticebar" ~> 0.1.4`
+1. Add Noticebar to your Cartfile. e.g., `github "qiuncheng/Noticebar" ~> 0.1.5`
 2. Run `carthage update`
 3. Follow the rest of the [standard Carthage installation](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) instructions to add Noticebar to your project.
 4. `import NoticeBar`
