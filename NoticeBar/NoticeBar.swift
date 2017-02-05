@@ -506,7 +506,7 @@ open class NoticeBar: UIView {
         if let subviews = UIApplication.shared.keyWindow?.subviews {
             for view in subviews {
                 if view.isKind(of: NoticeBar.self) {
-                    return
+                    view.removeFromSuperview()
                 }
             }
         }
