@@ -1,17 +1,31 @@
 //
-//  NoticeBar.swift
-//  NoticeBar
-//
 //  Created by Qiun Cheng on 2016/12/10.
-//  Copyright © 2016年 qiuncheng.com. All rights reserved.
+//  Copyright © 2016年 http://qiuncheng.com. All rights reserved.
+//
+//  MIT License
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
 
 import UIKit
 
+/// The default four *NoticeBarType*, you just tell the NoticeBar what message should show, or you can custom your NoticeBar using **NoticeBarConfig**.
+///
 public enum NoticeBarDefaultType: String {
+    /// The default info *NoticeBar*, with a 'notice_bar_info' image and white backgroundColor.
     case info = "notice_bar_info"
+    /// The default *attention* NoticeBar, with a 'notice_bar_attention' image and orange backgroundColor.
     case attention = "notice_bar_attention"
+    /// The default *success* NoticeBar, with a 'notice_bar_success' image and white backgroundColor.
     case success = "notice_bar_success"
+    /// The default *error* NoticeBar, with a 'notice_bar_error' image and 
+    ///
+    /// UIColor(red: 249.0/255.0, green: 66.0/255.0, blue: 47.0/255.0, alpha: 1.0) backgroundColor.
     case error = "notice_bar_error"
 }
 
@@ -71,10 +85,21 @@ extension NoticeBarDefaultType {
     }
 }
 
+/// NoticeBar appear with the animation.
+///
+/// And there are four different animation type.
+/// - top
+/// - bottom
+/// - left
+/// - right
 public enum NoticeBarAnimationType {
+    /// animate from top, but it doesn't work when NoticeBarStyle is `.onTabbar`.
     case top
+    /// animate from bottom, but it doesn't work when NoticeBarStyle is `.onNavigationBar`, '.onStatusBar', `belowStatusBar`.
     case bottom
+    /// animate from left.
     case left
+    /// animate from right.
     case right
 }
 
@@ -139,10 +164,29 @@ extension NoticeBarAnimationType {
     }
 }
 
+/// Where the NoticeBar you want to show.
+///
+/// There are four locations you will show the NoticeBar.
+/// - onStatusBar
+/// - belowStatusBar
+/// - onNavigationBar
+/// - onTabbar
 public enum NoticeBarStyle {
+    /// On status bar, it will cover status bar content when showing.
     case onStatusBar
+    ///  The NoticeBar content will show below status bar content. You should care the UIStatusBarStyle meanwhile. To enable change UIStatusBarStyle, you should set
+    ///
+    /// **View controller-based status bar appearance** to **NO**
+    /// 
+    /// in your application's **info.plist**.
     case belowStatusBar
+    ///  On navigation bar, it will cover all the navigation bar and status bar when showing.You should care the UIStatusBarStyle meanwhile. To enable change UIStatusBarStyle, you should set 
+    ///
+    /// **View controller-based status bar appearance** to **NO**
+    ///
+    /// in your application's **info.plist**.
     case onNavigationBar
+    /// On tab bar, it will cover all tab bar, whatever it has UITabbar or not.
     case onTabbar
 }
 
@@ -204,6 +248,7 @@ extension NoticeBarStyle {
 
 }
 
+/// The inner properties which are determined by NoticeBarStyle.
 fileprivate struct NoticeBarProperties {
     init() { }
     var shadowOffsetY: CGFloat = 0
@@ -219,17 +264,35 @@ fileprivate struct NoticeBarProperties {
     }
 }
 
+/// The NoticeBar configuration you provide if you want to custom.
 public struct NoticeBarConfig {
+    /// Create an empty NoticeBarConfig.
     public init() { }
 
+    /// The message you want to show, it will be center if image is nil, or in left.
     public var title: String?
+    /// The image you want to show, usually in the left, if it's nil, the title will be center. default is **nil**.
     public var image: UIImage? = nil
+    /// The space between image's left and NoticeBar left, default is **10.0**.
     public var margin: CGFloat = 10.0
+    /// The title's text color, default is **black**.
     public var textColor: UIColor = UIColor.black
+    /// The NoticeBar's background color, default is **white**.
     public var backgroundColor = UIColor.white
+    /// The animation NoticeBar appear, default is **NoticeBarAnimationType.top** from top.
     public var animationType = NoticeBarAnimationType.top
+    /// The bar style of NoticeBar, default is **NoticeBarStyle.onNavigationBar**.
     public var barStyle = NoticeBarStyle.onNavigationBar
 
+    /// Create a NoticeBarConfig with full of configs excepted 'margin'.
+    ///
+    /// - Parameters:
+    ///   - title: The message you want to show.
+    ///   - image: The image you want to show, or set nil.
+    ///   - textColor: The title's text color.
+    ///   - backgroundColor: The NoticeBar's background color.
+    ///   - barStyle: The bar style of NoticeBar.
+    ///   - animationType: The animation NoticeBar appear.
     public init(title: String?, image: UIImage?, textColor: UIColor, backgroundColor: UIColor, barStyle: NoticeBarStyle, animationType: NoticeBarAnimationType) {
         self.title = title
         self.image = image
@@ -239,6 +302,14 @@ public struct NoticeBarConfig {
         self.animationType = animationType
     }
 
+    /// Create a NoticeBarConfig with title, image, textColor, backgroundColor, barStyle. others is default.
+    ///
+    /// - Parameters:
+    ///   - title: The message you want to show.
+    ///   - image: The image you want to show, or set nil.
+    ///   - textColor: The title's text color.
+    ///   - backgroundColor: The NoticeBar's background color.
+    ///   - barStyle: The bar style of NoticeBar.
     public init(title: String?, image: UIImage?, textColor: UIColor, backgroundColor: UIColor, barStyle: NoticeBarStyle) {
         self.title = title
         self.image = image
@@ -247,6 +318,13 @@ public struct NoticeBarConfig {
         self.barStyle = barStyle
     }
 
+    /// Create a NoticeBarConfig with title, textColor, backgroundColor, barStyle. others is default. Especially 'image' will be nil, it means the message will be center with no image.
+    ///
+    /// - Parameters:
+    ///   - title: The message you want to show.
+    ///   - textColor: The title's text color.
+    ///   - backgroundColor: The NoticeBar's background color.
+    ///   - barStyle: The bar style of NoticeBar.
     public init(title: String?, textColor: UIColor, backgroundColor: UIColor, barStyle: NoticeBarStyle) {
         self.title = title
         self.textColor = textColor
@@ -254,6 +332,13 @@ public struct NoticeBarConfig {
         self.barStyle = barStyle
     }
 
+    /// Create a NoticeBarConfig with title, image, textColor, backgroundColor. others is default.
+    ///
+    /// - Parameters:
+    ///   - title: The message you want to show.
+    ///   - image: The image you want to show, or set nil.
+    ///   - textColor: The title's text color.
+    ///   - backgroundColor: The NoticeBar's background color.
     public init(title: String?, image: UIImage?, textColor: UIColor, backgroundColor: UIColor) {
         self.title = title
         self.image = image
@@ -261,6 +346,12 @@ public struct NoticeBarConfig {
         self.backgroundColor = backgroundColor
     }
 
+    /// Create a NoticeBarConfig with title, textColor, backgroundColor. others is default. Especially 'image' will be nil, it means the message will be center with no image.
+    ///
+    /// - Parameters:
+    ///   - title: The message you want to show.
+    ///   - textColor: The title's text color.
+    ///   - backgroundColor: The NoticeBar's background color.
     public init(title: String?, textColor: UIColor, backgroundColor: UIColor) {
         self.title = title
         self.textColor = textColor
@@ -272,21 +363,31 @@ open class NoticeBar: UIView {
 
     private var config = NoticeBarConfig()
 
-    open var defaultType: NoticeBarDefaultType?
 
+    /// Return the titleLabel which the message shows.
     open var titleLabel: UILabel? {
         return _titleLabel
     }
 
 
+    /// Return the imageView which the image shows.
     open var imageView: UIImageView? {
         return _imageView
     }
 
+    /// The default type.
+    private var defaultType: NoticeBarDefaultType?
     private var _titleLabel: UILabel?
     private var _imageView: UIImageView?
 
-    public func show(duration: TimeInterval, completed: @escaping (_ finished: Bool) -> Void) {
+    /// Show the notice bar when you finished create a NoticeBar instance. And it will dismiss automatically.
+    ///
+    /// Ususlly you can change **UIStatusBarStyle** before notice bar show, and you also set **UIStatusBarStyle** to pre state.
+    ///
+    /// - Parameters:
+    ///   - duration: How long the notice bar will stay. it's up to you, then it will dismiss automatically
+    ///   - completed: When notice bar dimissed, what you want to do. Or you can do nothing, just type nil.
+    public func show(duration: TimeInterval, completed: ((_ finished: Bool) -> Void)?) {
         let appStatusBarStyle = UIApplication.shared.statusBarStyle
         self.show(duration: duration, willShow: {
             [weak self] in
@@ -301,7 +402,7 @@ open class NoticeBar: UIView {
         }, completed: {
            [weak self] (finished) in
             guard let strongSelf = self else { return }
-            completed(finished)
+            completed?(finished)
             if finished {
                 let currentWindowLevel = strongSelf.config.barStyle.endWindowLevel
                 UIApplication.shared.keyWindow?.windowLevel = currentWindowLevel
@@ -313,6 +414,11 @@ open class NoticeBar: UIView {
         })
     }
 
+    /// Create a NoticeBar instance with title and one of four default type.
+    ///
+    /// - Parameters:
+    ///   - title: The message you want to show, you'd better not type nil.
+    ///   - defaultType: one of four default type.
     public convenience init(title: String?, defaultType: NoticeBarDefaultType ) {
 
         var config = defaultType.defaultConfig
@@ -322,6 +428,9 @@ open class NoticeBar: UIView {
         self.defaultType = defaultType
     }
 
+    /// Create a NoticeBar instance with your custom NoticeBarConfig.
+    ///
+    /// - Parameter config: custom NoticeBarConfig.
     public init(config: NoticeBarConfig) {
         super.init(frame: config.barStyle.noticeBarProperties().viewFrame)
         self.backgroundColor = config.backgroundColor
@@ -392,12 +501,12 @@ open class NoticeBar: UIView {
         _titleLabel?.frame = CGRect(x: titleLabelOriginX, y: titleLabelOriginY, width: titleLabelWidth, height: titleLabelHeight)
     }
 
-    private func show(duration: TimeInterval, willShow: (Void) -> Void, completed: @escaping (_ finished: Bool) -> Void) {
+    private func show(duration: TimeInterval, willShow: (Void) -> Void, completed: ((_ finished: Bool) -> Void)?) {
 
         if let subviews = UIApplication.shared.keyWindow?.subviews {
             for view in subviews {
                 if view.isKind(of: NoticeBar.self) {
-                    return
+                    view.removeFromSuperview()
                 }
             }
         }
@@ -424,7 +533,7 @@ open class NoticeBar: UIView {
                                 strongSelf.transform = strongSelf.config.animationType.noticeBarViewTransform(with: strongSelf.frame, strongSelf.config.barStyle)
 
                             }, completion: { (finished) in
-                                completed(finished)
+                                completed?(finished)
                                 if (finished) {
                                     strongSelf.removeFromSuperview()
                                 }
