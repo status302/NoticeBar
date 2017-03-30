@@ -99,6 +99,7 @@ LICENCE
 Under [MIT License](https://github.com/qiuncheng/NoticeBar/blob/master/LICENSE)
 
 Copyright (c) 2016 QiunCheng. All rights reserved.
+
 About me
 ===
 A student in Xidian University. [MY RESUME](https://qiuncheng.github.io/resume.html).   
