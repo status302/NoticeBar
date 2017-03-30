@@ -10,16 +10,19 @@ NoticeBar
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/qiuncheng/NoticeBar/master/LICENSE)
 
 #### ScreenShots
-<img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_error.jpg?raw=true" width="20%" height="20%">
+<p><img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_error.jpg?raw=true" width="20%" height="20%">
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_success.jpg?raw=true" width="20%" height="20%">
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_atttention.jpg?raw=true" width="20%" height="20%">
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_info.jpg?raw=true" width="20%" height="20%">
-<img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_below_status.jpg?raw=true" width="20%" height="20%">
+</p>
+<p><img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_below_status.jpg?raw=true" width="20%" height="20%">
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_statusbar.jpg?raw=true" width="20%" height="20%">
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_navigationbar.jpg?raw=true" width="20%" height="20%">
 <img src="https://github.com/qiuncheng/NoticeBar/blob/master/Screenshots/notice_bar_tabbar.jpg?raw=true" width="20%" height="20%">
+</p>
 
 **Remember: If you want the status bar style change, you must set the `View controller-based status bar appearance` to `NO` in the `info.plist`.**
+
 Support
 ===
 Swift 3.0 & iOS 8+
@@ -80,7 +83,7 @@ TODO
 ===
 - [ ] Add background image
 - [ ] Add custom view
-- [ ] Add custom super view, now is keyWindows.
+- [x] Add custom super view, now is keyWindows.
 - [ ] Add dismiss action manually, now dimiss is automatically.
 
 Thanks
