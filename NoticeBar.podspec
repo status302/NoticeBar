@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NoticeBar"
-  s.version      = "0.1.6"
+  s.version      = "0.1.7"
   s.summary      = "😍A simple NoticeBar with QQ notice view style.😀"
   s.description  = <<-DESC
                   😍A simple NoticeBar with QQ notice view style.😀 You can use the default style or custom style.
