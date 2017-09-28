@@ -501,7 +501,7 @@ open class NoticeBar: UIView {
         _titleLabel?.frame = CGRect(x: titleLabelOriginX, y: titleLabelOriginY, width: titleLabelWidth, height: titleLabelHeight)
     }
 
-    private func show(duration: TimeInterval, willShow: (Void) -> Void, completed: ((_ finished: Bool) -> Void)?) {
+    private func show(duration: TimeInterval, willShow: () -> Void, completed: ((_ finished: Bool) -> Void)?) {
 
         if let subviews = UIApplication.shared.keyWindow?.subviews {
             for view in subviews {
