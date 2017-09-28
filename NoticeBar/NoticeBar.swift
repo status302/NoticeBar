@@ -195,20 +195,23 @@ extension NoticeBarStyle {
     fileprivate func noticeBarProperties() -> NoticeBarProperties {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
+        let edgeInsets: UIEdgeInsets
+        if #available(iOS 11.0, *) {
+            edgeInsets = UIApplication.shared.keyWindow?.safeAreaInsets ?? UIEdgeInsets.zero
+        } else {
+            edgeInsets = UIEdgeInsets.zero
+        }
 
         var properties: NoticeBarProperties
         switch self {
         case .onNavigationBar:
-            properties = NoticeBarProperties(shadowOffsetY: 3, fontSizeScaleFactor: 0.55, textFont: UIFont.systemFont(ofSize: 18), viewFrame: CGRect(origin: CGPoint.zero, size: CGSize(width: screenWidth, height: 64.0)))
-            break
+            properties = NoticeBarProperties(shadowOffsetY: 3, fontSizeScaleFactor: 0.55, textFont: UIFont.systemFont(ofSize: 18), viewFrame: CGRect(origin: CGPoint.zero, size: CGSize(width: screenWidth, height: 64.0 + edgeInsets.top)))
         case .onStatusBar:
-            properties = NoticeBarProperties(shadowOffsetY: 2, fontSizeScaleFactor: 0.75, textFont: UIFont.systemFont(ofSize: 13), viewFrame: CGRect(origin: CGPoint.zero, size: CGSize(width: screenWidth, height: 20.0)))
-            break
+            properties = NoticeBarProperties(shadowOffsetY: 2, fontSizeScaleFactor: 0.75, textFont: UIFont.systemFont(ofSize: 13), viewFrame: CGRect(origin: CGPoint.zero, size: CGSize(width: screenWidth, height: 20.0 + edgeInsets.top)))
         case .onTabbar:
-            properties = NoticeBarProperties(shadowOffsetY: -3, fontSizeScaleFactor: 0.55,textFont: UIFont.systemFont(ofSize: 17), viewFrame: CGRect(origin: CGPoint(x: 0, y: screenHeight - 49.0), size: CGSize(width: screenWidth, height: 49.0)))
-            break
+            properties = NoticeBarProperties(shadowOffsetY: -3, fontSizeScaleFactor: 0.55,textFont: UIFont.systemFont(ofSize: 17), viewFrame: CGRect(origin: CGPoint(x: 0, y: screenHeight - 49.0 - edgeInsets.bottom), size: CGSize(width: screenWidth, height: 49.0 + edgeInsets.bottom)))
         case .belowStatusBar:
-            properties = NoticeBarProperties(shadowOffsetY: 2, fontSizeScaleFactor: 0.75, textFont: UIFont.systemFont(ofSize: 13), viewFrame: CGRect(origin: CGPoint.zero, size: CGSize(width: screenWidth, height: 40.0)))
+            properties = NoticeBarProperties(shadowOffsetY: 2, fontSizeScaleFactor: 0.75, textFont: UIFont.systemFont(ofSize: 13), viewFrame: CGRect(origin: CGPoint.zero, size: CGSize(width: screenWidth, height: 40.0 + edgeInsets.top)))
         }
 
         return properties
@@ -217,16 +220,19 @@ extension NoticeBarStyle {
 
     fileprivate func noticeBarOriginY(superViewHeight: CGFloat, _ height: CGFloat) -> CGFloat {
         var originY: CGFloat = 0
+        let edgeInsets: UIEdgeInsets
+        if #available(iOS 11.0, *) {
+            edgeInsets = UIApplication.shared.keyWindow?.safeAreaInsets ?? UIEdgeInsets.zero
+        } else {
+            edgeInsets = UIEdgeInsets.zero
+        }
         switch self {
         case .onNavigationBar:
-            originY = (superViewHeight - height) * 0.5 + 10
-            break
+            originY = (superViewHeight - height + edgeInsets.top) * 0.5 + 10
         case .onStatusBar:
-            originY = (superViewHeight - height) * 0.5
-            break
+            originY = (superViewHeight - height + edgeInsets.top) * 0.5
         case .onTabbar:
-            originY = (superViewHeight - height) * 0.5
-            break
+            originY = (superViewHeight - height - edgeInsets.bottom) * 0.5
         case .belowStatusBar:
             originY = (superViewHeight * 0.5 - height) * 0.5 + superViewHeight * 0.5
         }
@@ -521,7 +527,6 @@ open class NoticeBar: UIView {
             }, completion: {
                 (finished: Bool) in
                 if (finished) {
-
                     let afterQueue = DispatchQueue(label: "com.qiuncheng.NoticeBar")
                     let delayTime = DispatchTime.now() + duration
                     afterQueue.asyncAfter(deadline: delayTime, execute: {
